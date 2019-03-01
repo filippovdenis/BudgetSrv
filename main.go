@@ -8,19 +8,18 @@ import (
 	"encoding/json"
 	"log"
 	"github.com/jinzhu/gorm"
-	
+
 	_ "github.com/lib/pq"
+
+	"github.com/filippovdenis/BudgetSrv/models"
+
 )
 
 var database *gorm.DB
 
 
 
-type SMSMessage struct {
-	MessageId int64 `gorm:"primary_key";"AUTO_INCREMENT"`
-	MessageBody string
-	DateStr string
-}
+
 
 func getHandler(w http.ResponseWriter, r *http.Request){
 	println("Method Get")
