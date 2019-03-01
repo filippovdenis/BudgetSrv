@@ -11,6 +11,7 @@ import (
 
 	_ "github.com/lib/pq"
 
+	"github.com/filippovdenis/BudgetSrv/controllers"
 	"github.com/filippovdenis/BudgetSrv/models"
 )
 
@@ -73,6 +74,7 @@ func main() {
 	}
 	database = db
 	defer db.Close()
+	smsPut
 
 	router := mux.NewRouter()
 	router.HandleFunc("/smsmessage", smsPutHandler).Methods("PUT")
